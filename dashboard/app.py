@@ -53,6 +53,17 @@ st.markdown("""
 [data-testid="stSidebar"] [data-baseweb="input"] input::placeholder { color: #94A3B8 !important; opacity: 1 !important; }
 [data-testid="stSidebar"] [data-baseweb="base-input"] { background-color: #FFFFFF !important; }
 [data-testid="stSidebar"] [data-baseweb="base-input"] * { color: #0F172A !important; }
+[data-testid="stSidebar"] [data-baseweb="base-input"] svg { fill: #64748B !important; color: #64748B !important; }
+[data-testid="stSidebar"] [data-baseweb="input"] input::placeholder { color: #64748B !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] { background-color: #FFFFFF !important;
+  border: 1px dashed #94A3B8 !important; border-radius: 10px !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * { color: #0F172A !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] small { color: #64748B !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] svg { fill: #3D7BFF !important; color: #3D7BFF !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button { background-color: #3D7BFF !important;
+  border: none !important; border-radius: 8px !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button * { color: #FFFFFF !important; }
 .sidebar-section-title { color: #3D7BFF !important; font-size: 11px !important; font-weight: 800 !important;
   letter-spacing: 1.2px !important; text-transform: uppercase !important; margin-top: 18px !important;
   margin-bottom: 8px !important; padding-bottom: 4px !important; border-bottom: 1px solid #1F2740 !important; }
