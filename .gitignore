@@ -1,0 +1,23 @@
+# Secrets — never commit
+api key.txt
+config/keys.env
+*.env
+!*.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Data and models (too large / regenerable)
+data/raw_videos/
+data/extracted_frames/
+data/rdd2022_sample/
+# models/*.pt  ← unblocked for deployment (best.pt is ~18 MB, within GitHub's 100 MB limit)
+outputs/incidents/
+outputs/logs/
+outputs/runs/
+runs/
+extracted_frames
+raw_videos
+rdd2022_sample
