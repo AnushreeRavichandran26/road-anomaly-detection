@@ -43,26 +43,32 @@ st.markdown("""
 <style>
 .stApp { background-color: #F4F6F9; }
 [data-testid="stSidebar"] { background-color: #151B2B !important; border-right: 1px solid #1F2740 !important; }
-[data-testid="stSidebar"] * { color: #F8FAFC !important; }
+[data-testid="stSidebar"] > div * { color: #F8FAFC !important; }
 [data-testid="stSidebar"] label { color: #CBD5E1 !important; font-size: 13px !important; font-weight: 600 !important; }
 [data-testid="stSidebar"] .stMarkdown p, [data-testid="stSidebar"] .stCaption { color: #94A3B8 !important; }
+
+/* ── dropdowns ── */
 [data-testid="stSidebar"] [data-baseweb="select"] * { color: #0F172A !important; }
-[data-testid="stSidebar"] input { color: #0F172A !important; background-color: #FFFFFF !important; }
-[data-testid="stSidebar"] [data-baseweb="input"] { background-color: #FFFFFF !important; }
-[data-testid="stSidebar"] [data-baseweb="input"] input { color: #0F172A !important; }
-[data-testid="stSidebar"] [data-baseweb="input"] input::placeholder { color: #94A3B8 !important; opacity: 1 !important; }
-[data-testid="stSidebar"] [data-baseweb="base-input"] { background-color: #FFFFFF !important; }
-[data-testid="stSidebar"] [data-baseweb="base-input"] * { color: #0F172A !important; }
-[data-testid="stSidebar"] [data-baseweb="base-input"] svg { fill: #64748B !important; color: #64748B !important; }
-[data-testid="stSidebar"] [data-baseweb="input"] input::placeholder { color: #64748B !important; }
-[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] { background-color: #FFFFFF !important;
-  border: 1px dashed #94A3B8 !important; border-radius: 10px !important; }
-[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] * { color: #0F172A !important; }
+
+/* ── all text inputs & date picker ── */
+[data-testid="stSidebar"] [data-baseweb="base-input"],
+[data-testid="stSidebar"] [data-baseweb="input"] { background-color: #FFFFFF !important; border-radius: 8px !important; }
+[data-testid="stSidebar"] [data-baseweb="base-input"] *,
+[data-testid="stSidebar"] [data-baseweb="input"] * { color: #1E293B !important; }
+[data-testid="stSidebar"] input { color: #1E293B !important; background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] input::placeholder { color: #94A3B8 !important; opacity: 1 !important; }
+[data-testid="stSidebar"] [data-baseweb="base-input"] svg,
+[data-testid="stSidebar"] [data-baseweb="input"] svg { fill: #64748B !important; }
+
+/* ── file uploader ── */
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] { background-color: #1E2A42 !important;
+  border: 2px dashed #3D7BFF !important; border-radius: 10px !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] span,
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] p { color: #CBD5E1 !important; }
 [data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] small { color: #64748B !important; }
-[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] svg { fill: #3D7BFF !important; color: #3D7BFF !important; }
+[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] svg { fill: #3D7BFF !important; }
 [data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button { background-color: #3D7BFF !important;
-  border: none !important; border-radius: 8px !important; }
-[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button,
+  border: none !important; border-radius: 8px !important; color: #FFFFFF !important; }
 [data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] button * { color: #FFFFFF !important; }
 .sidebar-section-title { color: #3D7BFF !important; font-size: 11px !important; font-weight: 800 !important;
   letter-spacing: 1.2px !important; text-transform: uppercase !important; margin-top: 18px !important;
