@@ -47,7 +47,12 @@ st.markdown("""
 [data-testid="stSidebar"] label { color: #CBD5E1 !important; font-size: 13px !important; font-weight: 600 !important; }
 [data-testid="stSidebar"] .stMarkdown p, [data-testid="stSidebar"] .stCaption { color: #94A3B8 !important; }
 [data-testid="stSidebar"] [data-baseweb="select"] * { color: #0F172A !important; }
-[data-testid="stSidebar"] input { color: #0F172A !important; }
+[data-testid="stSidebar"] input { color: #0F172A !important; background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-baseweb="input"] { background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-baseweb="input"] input { color: #0F172A !important; }
+[data-testid="stSidebar"] [data-baseweb="input"] input::placeholder { color: #94A3B8 !important; opacity: 1 !important; }
+[data-testid="stSidebar"] [data-baseweb="base-input"] { background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-baseweb="base-input"] * { color: #0F172A !important; }
 .sidebar-section-title { color: #3D7BFF !important; font-size: 11px !important; font-weight: 800 !important;
   letter-spacing: 1.2px !important; text-transform: uppercase !important; margin-top: 18px !important;
   margin-bottom: 8px !important; padding-bottom: 4px !important; border-bottom: 1px solid #1F2740 !important; }
