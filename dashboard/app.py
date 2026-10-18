@@ -55,8 +55,14 @@ st.markdown("""
 [data-testid="stSidebar"] [data-baseweb="input"] { background-color: #FFFFFF !important; border-radius: 8px !important; }
 [data-testid="stSidebar"] [data-baseweb="base-input"] *,
 [data-testid="stSidebar"] [data-baseweb="input"] * { color: #1E293B !important; }
-[data-testid="stSidebar"] input { color: #1E293B !important; background-color: #FFFFFF !important; }
-[data-testid="stSidebar"] input::placeholder { color: #94A3B8 !important; opacity: 1 !important; }
+[data-testid="stSidebar"] input { color: #1E293B !important; background-color: #FFFFFF !important;
+  -webkit-text-fill-color: #1E293B !important; }
+[data-testid="stSidebar"] input::placeholder { color: #94A3B8 !important;
+  -webkit-text-fill-color: #94A3B8 !important; opacity: 1 !important; }
+[data-testid="stSidebar"] [data-testid="stDateInput"] input { color: #1E293B !important;
+  -webkit-text-fill-color: #1E293B !important; background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-testid="stDateInput"] input::placeholder {
+  -webkit-text-fill-color: #94A3B8 !important; opacity: 1 !important; }
 [data-testid="stSidebar"] [data-baseweb="base-input"] svg,
 [data-testid="stSidebar"] [data-baseweb="input"] svg { fill: #64748B !important; }
 
