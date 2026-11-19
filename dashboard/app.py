@@ -212,7 +212,7 @@ with st.sidebar:
         "Weather when the video was recorded", WEATHER_OPTIONS, index=0,
         help="Used by the Context Agent. 'Recently rained' = rain has stopped but the road is still wet. "
              "Leave 'Unknown' if you don't know - no weather adjustment is applied then.")
-    recorded_on = st.text_input("Recording date (optional, for the report)", value="", placeholder="YYYY-MM-DD")
+    recorded_on = st.date_input("Recording date (optional, for the report)", value=None)
 
     st.markdown('<div class="sidebar-section-title">3. Detection</div>', unsafe_allow_html=True)
     preset = st.radio("Detection mode", list(settings.CONFIDENCE_PRESETS),
@@ -237,6 +237,30 @@ with st.sidebar:
 
 if run_button and not uploaded_video:
     st.error("Upload a video first.")
+
+# JS fix: force date input text colour to black on Streamlit Cloud
+import streamlit.components.v1 as components
+components.html("""
+<script>
+(function fixDateInput() {
+  function applyFix() {
+    // Walk up from this iframe to the parent document
+    var doc = window.parent.document;
+    var inputs = doc.querySelectorAll('[data-testid="stDateInput"] input');
+    inputs.forEach(function(inp) {
+      inp.style.setProperty('color', '#000000', 'important');
+      inp.style.setProperty('-webkit-text-fill-color', '#000000', 'important');
+      inp.style.setProperty('opacity', '1', 'important');
+      inp.style.setProperty('background-color', '#ffffff', 'important');
+    });
+  }
+  applyFix();
+  var observer = new MutationObserver(applyFix);
+  observer.observe(window.parent.document.body, {childList: true, subtree: true});
+})();
+</script>
+""", height=0)
+
 
 col_left, col_right = st.columns([62, 38])
 with col_right:
@@ -318,7 +342,7 @@ if uploaded_video and run_button:
         result = run_pipeline(
             video_path, model, weather_condition=weather_condition, conf_threshold=conf_threshold,
             frame_interval=frame_interval, detect_cuts=detect_cuts, run_dir=run_dir,
-            recorded_at=recorded_on.strip() if recorded_on and recorded_on.strip() else None,
+            recorded_at=str(recorded_on) if recorded_on else None,
             on_step=on_step, on_progress=lambda d, t: bar.progress(d / t, text=f"Detecting… frame {d}/{t}"))
     except Exception as e:
         status_box.update(label="Pipeline failed", state="error")
