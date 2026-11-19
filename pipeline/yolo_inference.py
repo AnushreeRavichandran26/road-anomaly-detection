@@ -1,3 +1,18 @@
+# The final (Review 3) model names its classes D00/D10/D20/D40; the agents use full names.
+# Names that are already full (Review 2 model) pass through unchanged.
+NAME_MAP = {
+    "D00": "D00_longitudinal_crack",
+    "D10": "D10_transverse_crack",
+    "D20": "D20_alligator_crack",
+    "D40": "D40_pothole",
+}
+
+
+def class_name(model, cls_id):
+    name = model.names[cls_id]
+    return NAME_MAP.get(name, name)
+
+
 def run_detection(model, frames, conf_threshold=0.4, progress_callback=None):
     """
     Run YOLO prediction over extracted frame records.
@@ -22,7 +37,7 @@ def run_detection(model, frames, conf_threshold=0.4, progress_callback=None):
                 "frame": rec["frame_number"],
                 "timestamp_sec": rec.get("timestamp_sec"),
                 "segment_id": rec.get("segment_id", 1),
-                "class": model.names[cls_id],
+                "class": class_name(model, cls_id),
                 "conf": round(float(box.conf[0]), 3),
                 "bbox": [round(float(v), 1) for v in box.xyxy[0].tolist()],
                 "frame_path": rec["frame_path"],

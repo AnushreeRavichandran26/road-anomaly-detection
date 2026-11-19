@@ -23,8 +23,16 @@ Dashcam video
 
 Orchestration: `pipeline/run_pipeline.py` (used by the dashboard, the CLI and the evaluation scripts).
 
-Model classes: `D00_longitudinal_crack`, `D10_transverse_crack`, `D20_alligator_crack`, `D40_pothole`, `repair`.
-Baseline: mAP50 0.506 overall (79 epochs), D40 0.655, repair 0.393.
+Model classes used by the agents: `D00_longitudinal_crack`, `D10_transverse_crack`, `D20_alligator_crack`, `D40_pothole`
+(and `repair` for the Review 2 model, which is set aside as already-repaired).
+
+| Model | Classes | mAP50 | Notes |
+|---|---|---|---|
+| Review 2 baseline | 5 (incl. `repair`), 6 countries | 0.506 (79 epochs) | D40 0.655, repair 0.393 |
+| Final model (Review 3) | 4 (D00, D10, D20, D40), 5 countries | 0.670 (0.684 with TTA) | 100 epochs, best at 98; recall 0.623 |
+
+The final model names its classes `D00`/`D10`/`D20`/`D40`; `pipeline/yolo_inference.py` maps them to the
+full names above (`NAME_MAP`), so either model can be placed at `models/best.pt`.
 
 ## User inputs (dashboard sidebar)
 
@@ -142,4 +150,4 @@ outputs/runs/  one folder per run: frames/, run.json, incidents.csv, label files
 - Weather is user-entered, not measured.
 - Severity weights are hand-set (sensitivity analysis provided, not learned).
 - Scene-cut detection finds hard cuts. Slow cross-fades may not be split.
-- The model baseline is weak on `repair` and thin cracks. Model improvement is planned for Review 3.
+- The final model is weakest on potholes in subsets with few examples (Czech, United States) and on thin transverse cracks.

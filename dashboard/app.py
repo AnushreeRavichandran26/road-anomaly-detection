@@ -48,7 +48,11 @@ st.markdown("""
 [data-testid="stSidebar"] .stMarkdown p, [data-testid="stSidebar"] .stCaption { color: #94A3B8 !important; }
 
 /* ── dropdowns ── */
-[data-testid="stSidebar"] [data-baseweb="select"] * { color: #0F172A !important; }
+[data-testid="stSidebar"] [data-baseweb="select"] { background-color: #FFFFFF !important; border-radius: 8px !important; }
+[data-testid="stSidebar"] [data-baseweb="select"] > div { background-color: #FFFFFF !important; border-radius: 8px !important; border-color: #334155 !important; }
+[data-testid="stSidebar"] [data-baseweb="select"] * { color: #0F172A !important; background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-baseweb="select"] [data-baseweb="select-option"] { background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-baseweb="select"] svg { fill: #64748B !important; background-color: transparent !important; }
 
 /* ── all text inputs & date picker ── */
 [data-testid="stSidebar"] [data-baseweb="base-input"],
