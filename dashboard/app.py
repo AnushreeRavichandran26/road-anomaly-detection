@@ -68,10 +68,21 @@ st.markdown("""
 [data-testid="stSidebar"] [data-testid="stDateInput"] label { color: #CBD5E1 !important; background-color: transparent !important; }
 [data-testid="stSidebar"] [data-testid="stDateInput"] [data-baseweb="base-input"],
 [data-testid="stSidebar"] [data-testid="stDateInput"] [data-baseweb="input"] { background-color: #FFFFFF !important; border-radius: 8px !important; }
-[data-testid="stSidebar"] [data-testid="stDateInput"] input { color: #1E293B !important;
-  -webkit-text-fill-color: #1E293B !important; background-color: #FFFFFF !important; }
+[data-testid="stSidebar"] [data-testid="stDateInput"] input {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  background-color: #FFFFFF !important;
+  opacity: 1 !important;
+  filter: none !important; }
 [data-testid="stSidebar"] [data-testid="stDateInput"] input::placeholder {
-  -webkit-text-fill-color: #94A3B8 !important; opacity: 1 !important; }
+  color: #94A3B8 !important;
+  -webkit-text-fill-color: #94A3B8 !important;
+  opacity: 1 !important; }
+[data-testid="stSidebar"] [data-testid="stDateInput"] div[data-baseweb="input"] input,
+[data-testid="stSidebar"] [data-testid="stDateInput"] div[data-baseweb="base-input"] input {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  opacity: 1 !important; }
 [data-testid="stSidebar"] [data-testid="stDateInput"] svg { fill: #64748B !important; background-color: transparent !important; }
 [data-testid="stSidebar"] [data-baseweb="base-input"] svg,
 [data-testid="stSidebar"] [data-baseweb="input"] svg { fill: #64748B !important; }
