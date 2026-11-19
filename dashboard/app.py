@@ -63,15 +63,15 @@ st.markdown("""
   -webkit-text-fill-color: #1E293B !important; }
 [data-testid="stSidebar"] input::placeholder { color: #94A3B8 !important;
   -webkit-text-fill-color: #94A3B8 !important; opacity: 1 !important; }
-/* ── date input: force white background on all wrapper layers ── */
-[data-testid="stSidebar"] [data-testid="stDateInput"] { background-color: #FFFFFF !important; border-radius: 8px !important; }
-[data-testid="stSidebar"] [data-testid="stDateInput"] > div,
-[data-testid="stSidebar"] [data-testid="stDateInput"] > div > div { background-color: #FFFFFF !important; border-radius: 8px !important; }
+/* ── date input: white only on the input box, not the label ── */
+[data-testid="stSidebar"] [data-testid="stDateInput"] { background-color: transparent !important; }
+[data-testid="stSidebar"] [data-testid="stDateInput"] label { color: #CBD5E1 !important; background-color: transparent !important; }
+[data-testid="stSidebar"] [data-testid="stDateInput"] [data-baseweb="base-input"],
+[data-testid="stSidebar"] [data-testid="stDateInput"] [data-baseweb="input"] { background-color: #FFFFFF !important; border-radius: 8px !important; }
 [data-testid="stSidebar"] [data-testid="stDateInput"] input { color: #1E293B !important;
   -webkit-text-fill-color: #1E293B !important; background-color: #FFFFFF !important; }
 [data-testid="stSidebar"] [data-testid="stDateInput"] input::placeholder {
   -webkit-text-fill-color: #94A3B8 !important; opacity: 1 !important; }
-[data-testid="stSidebar"] [data-testid="stDateInput"] * { color: #1E293B !important; background-color: #FFFFFF !important; }
 [data-testid="stSidebar"] [data-testid="stDateInput"] svg { fill: #64748B !important; background-color: transparent !important; }
 [data-testid="stSidebar"] [data-baseweb="base-input"] svg,
 [data-testid="stSidebar"] [data-baseweb="input"] svg { fill: #64748B !important; }
